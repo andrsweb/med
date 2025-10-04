@@ -1,0 +1,12 @@
+# Node modules
+/node_modules/
+
+# IDE
+*.idea/
+*.vscode/
+
+# Логи
+*.log
+
+# Конфиги OS
+.DS_Store
