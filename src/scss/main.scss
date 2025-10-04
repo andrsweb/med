@@ -7,3 +7,7 @@
 
 //Mixins
 @forward 'mixins/mixins';
+
+//common
+@forward '../html/template-parts/header/header';
+@forward '../html/template-parts/footer/footer';
