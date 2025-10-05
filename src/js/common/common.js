@@ -65,8 +65,24 @@ const setupBurgerMenu = (header, burgerButton) => {
 }
 
 const setupAccessibilityToggle = (button, body) => {
+    const STORAGE_KEY = 'accessibility-mode'
+    const TEXT_NORMAL = 'Версия для слабовидящих'
+    const TEXT_ACCESSIBLE = 'Обычная версия'
+
+    const savedState = localStorage.getItem(STORAGE_KEY)
+    if (savedState === 'true') {
+        body.classList.add('accessibility-on')
+        button.textContent = TEXT_ACCESSIBLE
+    } else {
+        button.textContent = TEXT_NORMAL
+    }
+
     button.addEventListener('click', () => {
-        body.classList.toggle('accessibility-on')
+        const isEnabled = body.classList.toggle('accessibility-on')
+        
+        localStorage.setItem(STORAGE_KEY, isEnabled ? 'true' : 'false')
+        
+        button.textContent = isEnabled ? TEXT_ACCESSIBLE : TEXT_NORMAL
     })
 }
 
