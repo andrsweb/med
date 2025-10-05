@@ -1,3 +1,5 @@
+@forward "node_modules/swiper/swiper-bundle.min.css";
+
 // Defaults styles.
 @forward 'common/fonts';
 @forward 'vars/vars';
@@ -8,6 +10,12 @@
 //Mixins
 @forward 'mixins/mixins';
 
+//UI
+@forward 'utils/ui/button';
+
 //common
 @forward '../html/template-parts/header/header';
 @forward '../html/template-parts/footer/footer';
+
+//home
+@forward '../html/template-parts/sections/home/hero/hero';

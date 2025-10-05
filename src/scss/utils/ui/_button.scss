@@ -1,0 +1,47 @@
+@use "../../vars/vars" as v;
+@use "../../mixins/media" as m;
+@use "../../utils/placeholders/buttons/button" as *;
+
+.button {
+  @extend %button;
+  color: v.$white;
+  font-weight: v.$fw-regular;
+  background-color: v.$accent;
+
+  &.sm {
+    padding: 5px 20px;
+    font-size: 8px;
+    border-radius: 10px;
+
+    @include m.media(lg) {
+      padding: 6px 26px;
+      font-size: 10px;
+      border-radius: 13px;
+    }
+
+    @include m.media(xl) {
+      padding: 10px 40px;
+      font-size: 15px;
+      border-radius: 20px;
+    }
+
+  }
+
+  &.xl {
+    padding: 8px 32px;
+    font-size: 11px;
+    border-radius: 15px;
+
+    @include m.media(lg) {
+      padding: 10px 42px;
+      font-size: 15px;
+      border-radius: 20px;
+    }
+
+    @include m.media(xl) {
+      padding: 16px 66px;
+      font-size: 24px;
+      border-radius: 32px;
+    }
+  }
+}

@@ -1,5 +1,183 @@
-@use '../../../../../scss/vars/vars.scss' as v;
+@use '../../../../../scss/vars/vars' as v;
+@use '../../../../../scss/mixins/media' as m;
 
 .hero {
-	padding: 20px 0;
+  padding: 36px 0;
+
+  @include m.media(lg) {
+    padding: 32px 0;
+  }
+
+  @include m.media(xl) {
+    padding: 75px 0;
+  }
+
+  .swiper {
+    width: 100%;
+    min-height: 261px;
+
+    @include m.media(lg) {
+      min-height: 313px;
+    }
+
+    @include m.media(xl) {
+      min-height: 488px;
+    }
+
+    &-pagination {
+      margin-top: 12px;
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include m.media(lg) {
+        margin-top: 18px;
+      }
+
+      @include m.media(xl) {
+        margin-top: 25px;
+      }
+
+      &-bullet {
+        width: 10px;
+        height: 10px;
+        aspect-ratio: 1;
+        transform: scale(1);
+        background-color: v.$accent;
+        transition: background-color ease v.$tr;
+
+        @include m.media(lg) {
+          width: 14px;
+          height: 14px;
+        }
+
+        @include m.media(xl) {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+
+  .swiper-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .slide-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+
+    &-inner {
+      width: 100%;
+      min-height: 231px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 23px 16px;
+
+      @include m.media(lg) {
+        min-height: 282px;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 50px 65px 60px 76px;
+        gap: 20px;
+      }
+
+      @include m.media(xl) {
+        min-height: 441px;
+        padding: 50px 65px 60px 76px;
+      }
+
+      .button {
+        margin-top: auto;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+      max-width: 300px;
+
+      @include m.media(lg) {
+        max-width: 400px;
+      }
+
+      @include m.media(xl) {
+        max-width: 620px;
+      }
+
+      ul {
+        width: 100%;
+
+        li {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-right: 11px;
+          color: #FFF;
+          font-size: 13px;
+          font-weight: v.$fw-semibold;
+          line-height: 28px;
+
+          @include m.media(lg) {
+            font-size: 18px;
+            line-height: 44px;
+            margin-right: 16px;
+          }
+
+          @include m.media(xl) {
+            font-size: 28px;
+            line-height: 44px;
+            margin-right: 25px;
+
+          }
+
+          &:before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: v.$accent-l;
+            aspect-ratio: 1;
+            border-radius: 50%;
+
+            @include m.media(lg) {
+              width: 11px;
+              height: 11px;
+            }
+
+            @include m.media(xl) {
+              width: 18px;
+              height: 18px;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
 }

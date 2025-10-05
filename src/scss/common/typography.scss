@@ -10,7 +10,23 @@ h4, .h4, h5, .h5, h6, .h6 {
   padding: 0;
 }
 
-p,a,div,span,strong,b,button {
+h1,.h1 {
+  color: v.$white;
+  font-size: 19px;
+  line-height: 20px;
+
+  @include m.media(lg) {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  @include m.media(xl) {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+p,a,div,span,strong,b,button,li {
   font-family: v.$ff;
 }
 

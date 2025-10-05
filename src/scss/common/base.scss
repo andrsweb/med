@@ -23,6 +23,8 @@ body {
 	color: v.$black;
 	background-color: v.$white;
     transition: font-weight ease v.$tr;
+
+
 }
 
 img {
@@ -30,7 +32,7 @@ img {
 	height: auto
 }
 
-form, fieldset {
+form, fieldset, figure {
 	padding: 0;
 	margin: 0;
 	border: 0;
