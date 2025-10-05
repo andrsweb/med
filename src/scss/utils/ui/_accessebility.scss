@@ -13,12 +13,9 @@
 }
 
 .accessibility-on {
-  //common
-    .header {
-      .menu .menu-item a {
-        font-weight: v.$fw-bold;
-      }
-    }
+  [data-bold] {
+    font-weight: v.$fw-bold !important;
+  }
 
   .dark-layer {
     display: block;
@@ -27,11 +24,16 @@
   .button {
     font-weight:  v.$fw-extra;
   }
-
-  .hero {
-    li[data-bold] {
-      font-weight: v.$fw-bold;
-    }
-  }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

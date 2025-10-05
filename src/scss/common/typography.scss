@@ -53,3 +53,14 @@ b,
 strong {
   font-weight: v.$fw-bold
 }
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  @include m.media(md) {
+    gap: 20px;
+  }
+}

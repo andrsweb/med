@@ -1,0 +1,182 @@
+@use '../../../../../scss/vars/vars' as v;
+@use '../../../../../scss/mixins/media' as m;
+
+.text-image {
+  padding: 33px 0;
+  background-color: v.$accent-l3;
+  position: relative;
+  overflow: hidden;
+
+  @include m.media(lg) {
+    padding: 94px 0;
+  }
+
+  @include m.media(xl) {
+    padding: 105px 0;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 522px;
+    height: 522px;
+    background-color: v.$accent-l;
+    position: absolute;
+    right: 50%;
+    top: 20%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+
+    @include m.media(sm) {
+      top: 50%;
+    }
+
+    @include m.media(lg) {
+      width: 1023px;
+      height: 1023px;
+      right: 50%;
+    }
+
+    @include m.media(xl) {
+      width: 1404px;
+      height: 1404px;
+      right: 50%;
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    gap: 16px;
+
+    @include m.media(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 32px;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include m.media(lg) {
+      gap: 21px;
+    }
+
+    @include m.media(xl) {
+      gap: 34px;
+    }
+
+    h2 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: v.$dark;
+      font-size: 20px;
+      font-weight: v.$fw-bold;
+
+      span {
+        color: v.$accent;
+      }
+
+      @include m.media(lg) {
+        font-size: 23px;
+      }
+
+      @include m.media(xl) {
+        font-size: 36px;
+      }
+    }
+
+    .texts {
+      p {
+        color: v.$dark;
+        font-size: 12px;
+        font-weight: v.$fw-regular;
+        line-height: 14px;
+
+        @include m.media(lg) {
+          font-size: 13px;
+          line-height: 17px;
+        }
+
+        @include m.media(xl) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+
+  &-img {
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+
+    .img {
+      width: 256px;
+
+      @include m.media(xs) {
+        width: 320px;
+      }
+
+      @include m.media(md) {
+        width: 268px;
+      }
+
+      @include m.media(xl) {
+        width: 419px;
+      }
+    }
+
+    .link-circle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: v.$dark;
+      border-radius: 50%;
+      z-index: 1;
+
+      img {
+        width: 16px;
+
+        @include m.media(lg) {
+          width: 20px;
+        }
+
+        @include m.media(xl) {
+          width: 24px;
+        }
+      }
+
+      @include m.media(xs) {
+        width: 50px;
+        height: 50px;
+      }
+
+      @include m.media(md) {
+        width: 41px;
+        height: 41px;
+      }
+
+      @include m.media(xl) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
