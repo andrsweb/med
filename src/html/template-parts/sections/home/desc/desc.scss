@@ -1,0 +1,218 @@
+@use '../../../../../scss/vars/vars' as v;
+@use '../../../../../scss/mixins/media' as m;
+
+.desc {
+  padding: 40px 0;
+
+  @include m.media(lg) {
+    padding: 48px 0;
+  }
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include m.media(md) {
+      flex-direction: row;
+    }
+
+    @include m.media(xl) {
+      gap: 38px;
+    }
+
+    p {
+      color: v.$dark;
+      font-size: 12px;
+      font-weight: v.$fw-regular;
+      line-height: 30px;
+      text-align: center;
+
+      @include m.media(lg) {
+        font-size: 14px;
+        text-align: left;
+      }
+
+      @include m.media(xl) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: v.$white;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 15px);
+      height: calc(100% - 15px);
+      object-fit: cover;
+    }
+
+    @include m.media(md) {
+      width: 130px;
+      height: 130px;
+    }
+
+    @include m.media(lg) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @include m.media(xl) {
+      width: 235px;
+      height: 235px;
+    }
+  }
+
+  &-left {
+    padding: 26px;
+    border-radius: 19px;
+    width: 100%;
+    background-color: v.$accent-l;
+
+    @include m.media(md) {
+      max-width: 519px;
+    }
+
+    @include m.media(lg) {
+      max-width: 659px;
+    }
+
+    @include m.media(xl) {
+      max-width: 919px;
+    }
+
+    &-inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 17px;
+
+      @include m.media(lg) {
+        gap: 32px;
+      }
+    }
+
+    &-top {
+      width: 100%;
+      max-width: 293px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      @include m.media(md) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-right {
+    padding: 26px;
+    border-radius: 19px;
+    background-color: v.$accent-l3;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: -60%;
+      display: block;
+      width: 488px;
+      height: 488px;
+      aspect-ratio: 1;
+      background-color: v.$accent-l;
+      border-radius: 50%;
+
+      @include m.media(lg) {
+        width: 421px;
+        height: 421px;
+        right: -10%;
+        top: -44%;
+      }
+
+      @include m.media(xl) {
+        width: 657px;
+        height: 657px;
+        right: -30%;
+        top: -74%;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+
+      @include m.media(lg) {
+        font-size: 14px;
+        gap: 37px;
+      }
+
+      @include m.media(xl) {
+        gap: 50px;
+      }
+    }
+
+    &-top {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: v.$fw-regular;
+      line-height: 30px;
+
+      @include m.media(md) {
+        font-size: 12px;
+      }
+
+      @include m.media(lg) {
+        font-size: 14px;
+      }
+
+      @include m.media(xl) {
+        font-size: 22px;
+      }
+    }
+
+    .desc-item {
+      width: 175px;
+      height: 175px;
+
+      @include m.media(lg) {
+        width: 150px;
+        height: 150px;
+      }
+
+      @include m.media(xl) {
+        width: 235px;
+        height: 235px;
+      }
+    }
+  }
+}
