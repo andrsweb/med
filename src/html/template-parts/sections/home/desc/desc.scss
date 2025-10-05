@@ -47,8 +47,8 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 84px;
-    height: 84px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background-color: v.$white;
     position: relative;
@@ -61,6 +61,11 @@
       width: calc(100% - 15px);
       height: calc(100% - 15px);
       object-fit: cover;
+    }
+
+    @include m.media(xs) {
+      width: 84px;
+      height: 84px;
     }
 
     @include m.media(md) {
@@ -115,7 +120,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 10px;
+
+      @include m.media(xs) {
+        gap: 20px;
+      }
 
       @include m.media(md) {
         max-width: 100%;
