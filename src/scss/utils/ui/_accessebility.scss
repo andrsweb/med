@@ -13,10 +13,16 @@
 }
 
 .accessibility-on {
+  //common
+    .header {
+      .menu .menu-item a {
+        font-weight: v.$fw-bold;
+      }
+    }
+
   .dark-layer {
     display: block;
   }
-
   //hero
   .button {
     font-weight:  v.$fw-extra;
