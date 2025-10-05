@@ -1,0 +1,31 @@
+@use "../../vars/vars" as v;
+
+.dark-layer {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.accessibility-on {
+  .dark-layer {
+    display: block;
+  }
+
+  //hero
+  .button {
+    font-weight:  v.$fw-extra;
+  }
+
+  .hero {
+    li[data-bold] {
+      font-weight: v.$fw-bold;
+    }
+  }
+}
+

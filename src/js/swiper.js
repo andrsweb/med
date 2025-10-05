@@ -18,6 +18,7 @@ function initSwiper(selector, options = {}) {
             crossFade: true
         },
         speed: 700,
+        loop: true,
         grabCursor: true,
         pagination: {
             el: '.swiper-pagination',
