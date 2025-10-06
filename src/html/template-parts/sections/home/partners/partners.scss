@@ -26,21 +26,6 @@
     @include m.media(xl) {
       gap: 40px;
     }
-
-    h2 {
-      color: v.$dark;
-      font-size: 17px;
-      font-weight: v.$fw-bold;
-      text-transform: uppercase;
-
-      @include m.media(lg) {
-        font-size: 23px;
-      }
-
-      @include m.media(xl) {
-        font-size: 35px;
-      }
-    }
   }
 
   &-items {

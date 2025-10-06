@@ -1,0 +1,28 @@
+@use "../../vars/vars" as v;
+@use "../../mixins/media" as m;
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 45px;
+
+  @include m.media(lg) {
+    margin-bottom: 40px;
+  }
+
+  @include m.media(xl) {
+    margin-bottom: 109px;
+  }
+
+  a, .current {
+    color: v.$dark;
+    font-size: 11px;
+    font-weight: v.$fw-regular;
+
+    @include m.media(lg) {
+      font-size: 15px;
+    }
+  }
+}

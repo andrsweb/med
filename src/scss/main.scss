@@ -15,10 +15,14 @@
 
 //UI
 @forward 'utils/ui/button';
+@forward 'utils/ui/breadcrumbs';
 
 //common
 @forward '../html/template-parts/header/header';
 @forward '../html/template-parts/footer/footer';
+
+//components
+@forward '../html/template-parts/components/pagination/pagination';
 
 //home
 @forward '../html/template-parts/sections/home/hero/hero';
@@ -27,3 +31,6 @@
 @forward '../html/template-parts/sections/home/quote/quote';
 @forward '../html/template-parts/sections/home/news-cards/news-cards';
 @forward '../html/template-parts/sections/home/partners/partners';
+
+//news
+@forward '../html/template-parts/sections/news/news';

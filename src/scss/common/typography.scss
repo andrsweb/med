@@ -26,6 +26,21 @@ h1,.h1 {
   }
 }
 
+h2 {
+  color: v.$dark;
+  font-size: 17px;
+  font-weight: v.$fw-bold;
+  text-transform: uppercase;
+
+  @include m.media(lg) {
+    font-size: 23px;
+  }
+
+  @include m.media(xl) {
+    font-size: 35px;
+  }
+}
+
 p,a,div,span,strong,b,button,li {
   font-family: v.$ff;
 }

@@ -1,0 +1,103 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/mixins/media' as m;
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 73px;
+
+  @include m.media(md) {
+    gap: 16px;
+  }
+
+  @include m.media(lg) {
+    margin-top: 50px;
+  }
+
+  @include m.media(xl) {
+    margin-top: 130px;
+  }
+
+  button {
+    width: 20px;
+    height: 20px;
+    color: v.$black;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: v.$fw-semibold;
+    border: 1px solid #BEBEBE;
+    border-radius: 2px;
+
+    @include m.media(md) {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    &[disabled] {
+      opacity: v.$op;
+      cursor: not-allowed;
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    &:hover {
+      background-color: v.$accent-l;
+      color: v.$accent;
+    }
+
+    &:active {
+      background-color: v.$accent-l3;
+    }
+  }
+
+  .dots {
+    color: v.$black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: v.$fw-semibold;
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include m.media(md) {
+      gap: 16px;
+    }
+
+    .begin, .prev, .end, .forward {
+      img {
+        aspect-ratio: 1;
+        max-width: 12px;
+
+        @include m.media(md) {
+          max-width: 24px;
+        }
+      }
+    }
+
+    .begin, .prev {
+      img {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  &-pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include m.media(md) {
+      gap: 16px;
+    }
+  }
+}
