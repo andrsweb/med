@@ -1,0 +1,100 @@
+@use "../vars/vars" as v;
+@use "../mixins/mixins" as m;
+
+//home-page
+.accessibility-on {
+  //sections
+  .hero {
+    .swiper-slide-inner .h1 {
+      font-size: 20px;
+
+      @include m.media(lg) {
+        font-size: 26px;
+      }
+
+      @include m.media(xl) {
+        font-size: 40px;
+      }
+    }
+
+    .swiper-slide-info ul li {
+      font-size: 18px;
+      line-height: 20px;
+
+      @include m.media(xl) {
+        font-size: 28px;
+        line-height: 44px;
+      }
+    }
+  }
+
+  .text-image {
+    .text-image-info {
+      .texts p {
+        font-size: 18px;
+        line-height: 18px;
+
+        @include m.media(lg) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+
+  .desc {
+    &-left-inner {
+      p {
+        font-size: 18px;
+        line-height: 25px;
+
+        @include m.media(lg) {
+          font-size: 16px;
+          line-height: 23px;
+        }
+
+        @include m.media(xl) {
+          font-size: 22px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    &-right-inner {
+      p {
+        font-size: 18px;
+        line-height: 23px;
+
+        @include m.media(lg) {
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        @include m.media(xl) {
+          font-size: 22px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .news-cards {
+    .news-card {
+      p {
+        font-size: 16px;
+
+        @include m.media(xl) {
+          font-size: 18px;
+        }
+      }
+
+      .button {
+        font-size: 16px;
+
+        @include m.media(xl) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

@@ -10,9 +10,11 @@
 //Mixins
 @forward 'mixins/mixins';
 
+//Accessibility
+@forward 'accessibility/accessibility';
+
 //UI
 @forward 'utils/ui/button';
-@forward 'utils/ui/accessebility';
 
 //common
 @forward '../html/template-parts/header/header';
