@@ -1,0 +1,89 @@
+@use '../../../../../scss/vars/vars' as v;
+@use '../../../../../scss/mixins/media' as m;
+
+.news-cards {
+  padding: 25px 0;
+
+  @include m.media(lg) {}
+
+  @include m.media(xl) {}
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    @include m.media(lg) {
+      gap: 25px;
+    }
+
+    @include m.media(xl) {
+      gap: 40px;
+    }
+
+    h2 {
+      color: v.$dark;
+      font-size: 17px;
+      font-weight: v.$fw-bold;
+      text-transform: uppercase;
+
+      @include m.media(lg) {
+        font-size: 23px;
+      }
+
+      @include m.media(xl) {
+        font-size: 35px;
+      }
+    }
+  }
+
+  &-items {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @include m.media(lg) {
+      gap: 26px;
+    }
+
+    .news-card {
+      flex: 1 1 calc(50% - 6px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: v.$accent-l;
+      padding: 14px;
+      border-radius: 30px;
+      gap: 16px;
+
+      @include m.media(lg) {
+        flex: 1 1 calc(25% - 20px);
+        padding: 20px;
+        gap: 22px;
+      }
+
+      @include m.media(xl) {
+        padding: 30px;
+        gap: 30px;
+      }
+
+      p {
+        color: v.$dark;
+        font-size: 11px;
+        font-weight: v.$fw-regular;
+
+        @include m.media(lg) {
+          font-size: 9px;
+        }
+
+        @include m.media(xl) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
