@@ -38,4 +38,40 @@
   .button {
     font-weight:  v.$fw-extra;
   }
+
+  .header {
+    .menu li a {
+      color: v.$blue;
+    }
+  }
+
+  .footer {
+    .footer-logo {
+      img {
+        filter: hue-rotate(300deg);
+      }
+    }
+
+    ul li {
+      a,p,address {
+        font-size: 16px;
+        font-weight: v.$fw-semibold;
+
+        @include m.media(xl) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .footer-info {
+      p, .copyright {
+        font-size: 16px;
+        font-weight: v.$fw-semibold;
+
+        @include m.media(xl) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }

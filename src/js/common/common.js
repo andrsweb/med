@@ -1,10 +1,11 @@
 'use strict'
 
-import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock'
-import { MOBILE_BREAKPOINT } from './global'
+import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock'
+import {MOBILE_BREAKPOINT} from './global'
 
 document.addEventListener('DOMContentLoaded', () => {
     initUI()
+    getYear()
 })
 
 const initUI = () => {
@@ -121,3 +122,11 @@ const setupResizeHandler = (header) => {
         wasDesktop = isDesktop
     })
 }
+
+const getYear = () => {
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear().toString();
+    }
+}
+

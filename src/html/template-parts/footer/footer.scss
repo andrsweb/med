@@ -1,7 +1,152 @@
 @use '../../../scss/vars/vars' as v;
+@use '../../../scss/mixins/media' as m;
 
 .footer {
-	&-wrapper {
-		display: flex;
-	}
+  width: 100%;
+  padding: 20px 0;
+  background-color: v.$accent-l;
+
+  @include m.media(lg) {
+    padding: 33px 0;
+  }
+
+  @include m.media(xl) {
+    padding: 40px 0;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    @include m.media(lg) {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    .m {
+      height: 39px;
+
+      @include m.media(lg) {
+        display: none;
+      }
+    }
+
+    .d {
+      display: none;
+
+      @include m.media(lg) {
+        display: block;
+        height: 49px;
+      }
+
+      @include m.media(xl) {
+        height: 82px;
+      }
+    }
+  }
+
+  &-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include m.media(lg) {
+      flex-direction: row;
+    }
+
+    ul, .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+
+      @include m.media(lg) {
+        gap: 7px;
+      }
+
+      li {
+        p, a, address {
+          color: v.$accent;
+          font-size: 11px;
+          font-weight: v.$fw-semibold;
+          font-style: normal;
+
+          @include m.media(xl) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .footer-cols {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 17px;
+
+      @include m.media(lg) {
+        gap: 30px;
+      }
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      @include m.media(lg) {
+        flex: 1 1 334px;
+        gap: 20px;
+      }
+
+      @include m.media(xl) {
+        flex: 1 1 520px;
+        gap: 25px;
+      }
+
+      p, .copyright {
+        max-width: 247px;
+        color: v.$black;
+        font-weight: v.$fw-medium;
+        text-align: center;
+
+        @include m.media(lg) {
+          text-align: left;
+          max-width: 100%;
+        }
+      }
+
+      p {
+        font-size: 9px;
+
+        @include m.media(xl) {
+          font-size: 11px;
+        }
+      }
+
+      .copyright {
+        font-size: 9px;
+
+        @include m.media(lg) {
+          font-size: 11px;
+        }
+
+        @include m.media(xl) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
