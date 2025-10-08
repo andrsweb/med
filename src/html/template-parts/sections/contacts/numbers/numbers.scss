@@ -35,7 +35,7 @@
       flex-direction: row;
       justify-content: space-between;
       border-radius: 30px;
-      gap: 10px;
+      gap: 17px;
     }
     @include m.media(xl) {
       padding: 32px;
@@ -56,40 +56,70 @@
         gap: 17px;
       }
     }
+  }
 
-    .numbers-item {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+  .numbers-item, .rows-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-      img {
-        width: auto;
-        height: 19px;
+    img {
+      width: 19px;
 
-        @include m.media(lg) {
-          height: 22px;
-        }
-
-        @include m.media(xl) {
-          height: 32px;
-        }
+      @include m.media(lg) {
+        width: 22px;
       }
 
-      a, address, p {
-        color: v.$dark;
-        font-size: 14px;
-        font-weight: v.$fw-regular;
-        font-style: normal;
-
-        @include m.media(lg) {
-          font-size: 15px;
-        }
-
-        @include m.media(xl) {
-          font-size: 23px;
-        }
+      @include m.media(xl) {
+        width: 32px;
       }
+    }
+
+    a, address, p, span {
+      color: v.$dark;
+      font-size: 14px;
+      font-weight: v.$fw-regular;
+      font-style: normal;
+
+      @include m.media(lg) {
+        font-size: 15px;
+      }
+
+      @include m.media(xl) {
+        font-size: 23px;
+      }
+    }
+  }
+
+  .nums {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: auto;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  h3 {
+    color: v.$dark;
+    font-size: 14px;
+    font-weight: v.$fw-bold;
+    line-height: 18px;
+
+    @include m.media(lg) {
+      font-size: 20px;
+      line-height: 31px;
+    }
+
+    @include m.media(xl) {
+      font-size: 32px;
+      line-height: 49px;
     }
   }
 }
