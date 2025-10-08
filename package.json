@@ -45,7 +45,8 @@
 		"last 3 versions"
 	],
 	"dependencies": {
-      "body-scroll-lock": "^3.1.5",
-      "swiper":	"^11.2.10"
+		"@fancyapps/ui": "^6.0.34",
+		"body-scroll-lock": "^3.1.5",
+		"swiper": "^11.2.10"
 	}
 }

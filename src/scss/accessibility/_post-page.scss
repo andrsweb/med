@@ -1,0 +1,21 @@
+@use "../vars/vars" as v;
+@use "../mixins/mixins" as m;
+
+//home-page
+.accessibility-on {
+  .post {
+    p {
+      font-size: 18px;
+      line-height: 23px;
+
+      @include m.media(lg) {
+        line-height: 21px;
+      }
+
+      @include m.media(xl) {
+        font-size: 22px;
+        line-height: 33px;
+      }
+     }
+  }
+}

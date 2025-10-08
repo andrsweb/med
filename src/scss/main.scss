@@ -1,4 +1,5 @@
 @forward "node_modules/swiper/swiper-bundle.min.css";
+@forward "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
 
 // Defaults styles.
 @forward 'common/fonts';
@@ -34,3 +35,6 @@
 
 //news
 @forward '../html/template-parts/sections/news/news';
+
+//post
+@forward '../html/template-parts/sections/post/post/post';
