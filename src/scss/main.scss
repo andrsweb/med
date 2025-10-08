@@ -38,3 +38,10 @@
 
 //post
 @forward '../html/template-parts/sections/post/post/post';
+
+//contacts
+@forward '../html/template-parts/sections/contacts/contacts/contacts';
+@forward '../html/template-parts/sections/contacts/numbers/numbers';
+@forward '../html/template-parts/sections/contacts/map/map';
+@forward '../html/template-parts/sections/contacts/numbers-cols/numbers-cols';
+@forward '../html/template-parts/sections/contacts/time/time';

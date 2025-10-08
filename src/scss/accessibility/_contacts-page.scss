@@ -1,0 +1,18 @@
+@use "../vars/vars" as v;
+@use "../mixins/mixins" as m;
+
+//contacts-page
+.accessibility-on {
+  //sections
+  .numbers {
+    &-items {
+      a, p, address {
+        font-size: 18px;
+
+        @include m.media(xl) {
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
