@@ -43,6 +43,12 @@
     .menu li a {
       color: v.$blue;
     }
+
+    &-logo {
+      img {
+        filter: hue-rotate(300deg);
+      }
+    }
   }
 
   .footer {
@@ -72,6 +78,12 @@
           font-size: 18px;
         }
       }
+    }
+  }
+
+  .breadcrumbs {
+    a, .current {
+      font-weight: v.$fw-bold;
     }
   }
 }
