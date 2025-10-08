@@ -2,7 +2,9 @@
 @use '../../../../../scss/mixins/media' as m;
 
 .map {
+  width: 100%;
   &-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -14,6 +16,17 @@
 
     @include m.media(xl) {
       gap: 40px;
+    }
+  }
+
+  &-inner {
+    width: 100%;
+
+    iframe {
+      width: 100%;
+      border: 0;
+      height: 257px;
+      border-radius: 20px;
     }
   }
 }
