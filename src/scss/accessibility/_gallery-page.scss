@@ -1,0 +1,44 @@
+@use "../vars/vars" as v;
+@use "../mixins/mixins" as m;
+
+//gallery-page
+.accessibility-on {
+  //sections
+  .gallery {
+    &-filters {
+      .gallery-filter {
+        font-size: 16px;
+
+        @include m.media(lg) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .grid {
+      &-item {
+        .grid-info h4 {
+          h4 {
+            font-size: 24px !important;
+
+            @include m.media(lg) {
+              font-size: 20px !important;
+            }
+
+            @include m.media(xl) {
+              font-size: 23px !important;
+            }
+          }
+        }
+
+        .grid-info p {
+            font-size: 18px !important;
+
+            @include m.media(xl) {
+              font-size: 20px !important;
+            }
+        }
+      }
+    }
+  }
+}
