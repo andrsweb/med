@@ -1,33 +1,45 @@
 import Swiper from 'swiper';
-import {Pagination, EffectFade, Autoplay} from 'swiper/modules';
+import { Pagination, EffectFade, Autoplay, Navigation } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    initSwiper('.swiper-f');
+    initSwiper('.swiper-f', {
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    });
+
+    initSwiper('.swiper-s', {
+        speed: 800,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        navigation: {
+            nextEl: '.swiper-next',
+        }
+    });
 });
 
-function initSwiper(selector, options = {}) {
+const initSwiper = (selector, options = {}) => {
     const container = document.querySelector(selector);
     if (!container) return;
 
     return new Swiper(container, {
-        modules: [Pagination, EffectFade, Autoplay],
+        modules: [Pagination, EffectFade, Autoplay, Navigation],
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        speed: 700,
         loop: true,
         grabCursor: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: true
-        },
         ...options
     });
 }
