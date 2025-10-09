@@ -39,48 +39,6 @@
       display: block;
     }
   }
-
-  .gallery-filters {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    @include m.media(lg) {
-      gap: 18px;
-    }
-  }
-
-  .gallery-filter {
-    width: 100%;
-    color: v.$dark;
-    font-size: 9px;
-    font-weight: v.$fw-bold;
-    background-color: v.$accent-l;
-    border-radius: 8px;
-    padding: 7px 10px;
-    transition: background-color ease v.$tr, color ease v.$tr;
-
-    @include m.media(md) {
-      width: auto;
-    }
-
-    @include m.media(lg) {
-      padding: 9px 13px;
-      font-size: 12px;
-    }
-
-    @include m.media(xl) {
-      padding: 14px 20px;
-      border-radius: 15px;
-      font-size: 18px;
-    }
-
-    &.active {
-      color: v.$white;
-      background-color: v.$accent;
-    }
-  }
 }
 
   .grid {
@@ -174,6 +132,48 @@
           }
         }
       }
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @include m.media(lg) {
+    gap: 18px;
+  }
+
+  .filter {
+    width: 100%;
+    color: v.$dark;
+    font-size: 9px;
+    font-weight: v.$fw-bold;
+    background-color: v.$accent-l;
+    border-radius: 8px;
+    padding: 7px 10px;
+    transition: background-color ease v.$tr, color ease v.$tr;
+
+    @include m.media(md) {
+      width: auto;
+    }
+
+    @include m.media(lg) {
+      padding: 9px 13px;
+      font-size: 12px;
+    }
+
+    @include m.media(xl) {
+      padding: 14px 20px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+
+    &.active {
+      color: v.$white;
+      background-color: v.$accent;
     }
   }
 }
