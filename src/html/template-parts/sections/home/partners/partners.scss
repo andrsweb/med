@@ -2,14 +2,14 @@
 @use '../../../../../scss/mixins/media' as m;
 
 .partners {
-  padding: 60px 0 21px;
+  padding: 5px 0 21px;
 
   @include m.media(lg) {
-    padding: 100px 0 55px;
+    padding: 15px 0 55px;
   }
 
   @include m.media(xl) {
-    padding: 120px 0 60px;
+    padding: 35px 0 60px;
   }
 
   &-wrapper {

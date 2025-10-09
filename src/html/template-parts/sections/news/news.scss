@@ -64,6 +64,7 @@
 
         @include m.media(md) {
           gap: 32px;
+          flex-direction: row;
         }
 
         @include m.media(xl) {
@@ -76,7 +77,7 @@
           align-items: center;
           gap: 10px;
 
-          @include m.media(lg) {
+          @include m.media(md) {
             align-items: flex-start;
           }
 

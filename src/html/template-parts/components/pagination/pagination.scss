@@ -7,18 +7,18 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 73px;
+  margin: 53px 0;
 
   @include m.media(md) {
     gap: 16px;
   }
 
   @include m.media(lg) {
-    margin-top: 50px;
+    margin: 40px 0;
   }
 
   @include m.media(xl) {
-    margin-top: 130px;
+    margin: 100px 0;
   }
 
   button {
