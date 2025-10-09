@@ -121,21 +121,22 @@
     display: flex;
     position: relative;
     flex-shrink: 0;
+    width: 256px;
+
+    @include m.media(xs) {
+      width: 320px;
+    }
+
+    @include m.media(md) {
+      width: 268px;
+    }
+
+    @include m.media(xl) {
+      width: 419px;
+    }
 
     .swiper {
-      width: 256px;
-
-      @include m.media(xs) {
-        width: 320px;
-      }
-
-      @include m.media(md) {
-        width: 268px;
-      }
-
-      @include m.media(xl) {
-        width: 419px;
-      }
+      width: 100%;
 
       &-slide {
         width: 100%;
