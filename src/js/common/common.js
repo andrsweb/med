@@ -1,7 +1,7 @@
 'use strict'
 
-import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock'
-import {MOBILE_BREAKPOINT} from './global'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { MOBILE_BREAKPOINT } from './global'
 
 document.addEventListener('DOMContentLoaded', () => {
     initUI()
@@ -54,7 +54,7 @@ const setupBurgerMenu = (header, burgerButton) => {
         }
     })
 
-    closeButton.addEventListener('click', () => {
+    closeButton?.addEventListener('click', () => {
         closeMenu()
     })
 
@@ -80,9 +80,9 @@ const setupAccessibilityToggle = (button, body) => {
 
     button.addEventListener('click', () => {
         const isEnabled = body.classList.toggle('accessibility-on')
-        
+
         localStorage.setItem(STORAGE_KEY, isEnabled ? 'true' : 'false')
-        
+
         button.textContent = isEnabled ? TEXT_ACCESSIBLE : TEXT_NORMAL
     })
 }
@@ -93,12 +93,33 @@ const setupSubmenuToggles = (header) => {
     submenuLinks.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault()
+            e.stopPropagation()
 
             const parentItem = link.parentElement
+
+            const siblings = Array.from(parentItem.parentElement.children).filter(
+                el => el !== parentItem && el.classList.contains('opened')
+            )
+            siblings.forEach(sib => {
+                sib.classList.remove('opened')
+                const sibLink = sib.querySelector('a[aria-haspopup="true"]')
+                if (sibLink) sibLink.setAttribute('aria-expanded', 'false')
+            })
+
             const isOpened = parentItem.classList.toggle('opened')
-            
             link.setAttribute('aria-expanded', isOpened ? 'true' : 'false')
         })
+    })
+
+    document.addEventListener('click', e => {
+        if (!header.contains(e.target)) {
+            const openedItems = header.querySelectorAll('.opened')
+            openedItems.forEach(item => {
+                item.classList.remove('opened')
+                const link = item.querySelector('a[aria-haspopup="true"]')
+                if (link) link.setAttribute('aria-expanded', 'false')
+            })
+        }
     })
 }
 
@@ -124,9 +145,8 @@ const setupResizeHandler = (header) => {
 }
 
 const getYear = () => {
-    const yearEl = document.getElementById('year');
+    const yearEl = document.getElementById('year')
     if (yearEl) {
-        yearEl.textContent = new Date().getFullYear().toString();
+        yearEl.textContent = new Date().getFullYear().toString()
     }
 }
-

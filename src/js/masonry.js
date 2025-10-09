@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const initMasonry = () => {
     const grid = document.querySelector('.grid');
+
+    if(!grid) return
+
     const msnry = new Masonry(grid, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',

@@ -1,4 +1,6 @@
-# 2022 - GULP FOR HTML + SCSS + JS (ES6+)
+# GULP FOR HTML + SCSS + JS (ES6+)
+##Contacts for work:
+## Tg: https://t.me/a_bug_creator
 
 <br />
 
