@@ -3,6 +3,12 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { MOBILE_BREAKPOINT } from './global'
 
+const isMobileDevice = () => {
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    const isMobileWidth = window.innerWidth < MOBILE_BREAKPOINT
+    return hasTouch || isMobileWidth
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initUI()
     getYear()
@@ -43,6 +49,9 @@ const setupBurgerMenu = (header, burgerButton) => {
     }
 
     const toggleMenu = () => {
+        if (!isMobileDevice()) {
+            return
+        }
         header.classList.contains('menu-opened') ? closeMenu() : openMenu()
     }
 
@@ -92,6 +101,10 @@ const setupSubmenuToggles = (header) => {
 
     submenuLinks.forEach(link => {
         link.addEventListener('click', e => {
+            if (!isMobileDevice()) {
+                return
+            }
+
             e.preventDefault()
             e.stopPropagation()
 
